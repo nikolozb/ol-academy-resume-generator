@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sectionNames } from "../data";
 
 import Name from "../components/sections/Name";
@@ -10,7 +10,13 @@ import ProSummary from "../components/sections/ProSummary";
 
 const Create = () => {
   const [pageIndex, setPageIndex] = useState(0);
-  const [inputValues, setInputValues] = useState(sectionNames);
+  const [inputValues, setInputValues] = useState(
+    JSON.parse(localStorage.getItem("data")) || sectionNames
+  );
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(inputValues));
+  }, [inputValues]);
 
   const handleOnInputChange = (e) => {
     console.log();
