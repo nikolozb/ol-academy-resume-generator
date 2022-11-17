@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SectionControlls = ({ pageIndex, setPageIndex }) => {
   return (
     <div>
@@ -13,7 +15,12 @@ const SectionControlls = ({ pageIndex, setPageIndex }) => {
       >
         Next
       </button>
-      <button disabled={!(pageIndex === 5)}>Generate</button>
+      <Link
+        to="/export"
+        style={{ pointerEvents: pageIndex === 5 ? "" : "none" }}
+      >
+        Generate
+      </Link>
     </div>
   );
 };
