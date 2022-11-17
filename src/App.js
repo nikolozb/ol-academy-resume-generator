@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import ImportResume from "./pages/ImportResume";
 import ChooseTemplate from "./pages/ChooseTemplate";
 import Create from "./pages/Create";
+import Export from "./pages/Export";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/choose-template" element={<ChooseTemplate />} />
         <Route path="/import-resume" element={<ImportResume />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/export" element={<Export />} />
       </Routes>
     </div>
   );
