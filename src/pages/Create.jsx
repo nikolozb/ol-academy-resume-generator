@@ -7,6 +7,7 @@ import Skills from "../components/sections/Skills";
 import Experience from "../components/sections/Experience";
 import Education from "../components/sections/Education";
 import ProSummary from "../components/sections/ProSummary";
+import SectionControlls from "../components/SectionControlls";
 
 const Create = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -74,7 +75,12 @@ const Create = () => {
     }
   };
 
-  return <div>{switchSectionsHandler()}</div>;
+  return (
+    <div>
+      {switchSectionsHandler()}
+      <SectionControlls pageIndex={pageIndex} setPageIndex={setPageIndex} />
+    </div>
+  );
 };
 
 export default Create;
