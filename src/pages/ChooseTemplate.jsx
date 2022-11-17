@@ -1,14 +1,25 @@
 import { palette, dummy_data, themeDesc } from "../data";
-import { Link } from "react-router-dom";
+import { useNavigate, createSearchParams } from "react-router-dom";
 import { useState } from "react";
 
 import TemplateBox from "../components/TemplateBox";
 
 const ChooseTemplate = () => {
   const [hex, setHex] = useState("");
-  const [name, setName] = useState("");
+  const [name, setName] = useState("ClassicBlack");
   const [theme, setTheme] = useState("Angora");
   const [themeText, setThemeText] = useState(themeDesc.angora);
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate({
+      pathname: "/create",
+      search: createSearchParams({
+        theme: theme,
+        color: name,
+      }).toString(),
+    });
+  };
 
   return (
     <div className="ct">
@@ -31,7 +42,7 @@ const ChooseTemplate = () => {
             ))}
           </div>
         </>
-        <Link to="/create">Select this theme</Link>
+        <button onClick={handleNavigate}>Select this theme</button>
       </div>
       <div className="ct__right">
         {" "}

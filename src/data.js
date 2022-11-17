@@ -1,42 +1,42 @@
 export const palette = [
   {
     id: 1,
-    name: "Classic Black",
+    name: "ClassicBlack",
     hex: "#000000",
   },
   {
     id: 2,
-    name: "Night Sky",
+    name: "NightSky",
     hex: "#436975",
   },
   {
     id: 3,
-    name: "Blueprint Blue",
+    name: "BlueprintBlue",
     hex: "#305FEC",
   },
   {
     id: 4,
-    name: "Sea Side",
+    name: "SeaSide",
     hex: "#0E9FC1",
   },
   {
     id: 5,
-    name: "Mint Teal",
+    name: "MintTeal",
     hex: "#7EBCA3",
   },
   {
     id: 6,
-    name: "Martini Green",
+    name: "MartiniGreen",
     hex: "#ACB75A",
   },
   {
     id: 7,
-    name: "Electric Purple",
+    name: "ElectricPurple",
     hex: "#9097BE",
   },
   {
     id: 8,
-    name: "Booming Violet",
+    name: "BoomingViolet",
     hex: "#AC7BAE",
   },
 ];
