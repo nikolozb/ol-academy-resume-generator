@@ -1,11 +1,11 @@
-import React from "react";
+import ExportJSON from "../components/ExportJSON";
 
 const Export = () => {
   return (
     <div>
       <button>Export Image</button>
       <button>Export PDF</button>
-      <button>Export JSON</button>
+      <ExportJSON />
     </div>
   );
 };
