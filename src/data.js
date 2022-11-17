@@ -76,3 +76,14 @@ export const dummy_data = [
       "Successful sales professional with 10+ years of experience in large-scale food and retail environments",
   },
 ];
+
+export const sectionNames = {
+  name: "",
+  email: "",
+  address: "",
+  number: "",
+  education: "",
+  experience: "",
+  skills: "",
+  prosummary: "",
+};
