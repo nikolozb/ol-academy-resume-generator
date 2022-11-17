@@ -4,6 +4,7 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import ImportResume from "./pages/ImportResume";
 import ChooseTemplate from "./pages/ChooseTemplate";
+import Create from "./pages/Create";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/choose-template" element={<ChooseTemplate />} />
         <Route path="/import-resume" element={<ImportResume />} />
+        <Route path="/create" element={<Create />} />
       </Routes>
     </div>
   );
