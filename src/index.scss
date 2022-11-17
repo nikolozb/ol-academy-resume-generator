@@ -3,3 +3,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.home {
+  &__last {
+    border: 1px solid black;
+    border-radius: 8px;
+    max-width: 500px;
+    padding: 8px 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+  }
+  &__info {
+  }
+  &__stored {
+    background-color: orange;
+    padding: 5px 8px;
+    border-radius: 4px;
+    color: white;
+  }
+}
