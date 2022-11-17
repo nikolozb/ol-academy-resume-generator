@@ -8,6 +8,7 @@ import Experience from "../components/sections/Experience";
 import Education from "../components/sections/Education";
 import ProSummary from "../components/sections/ProSummary";
 import SectionControlls from "../components/SectionControlls";
+import ProgressBar from "../components/ProgressBar";
 
 const Create = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -79,6 +80,7 @@ const Create = () => {
     <div>
       {switchSectionsHandler()}
       <SectionControlls pageIndex={pageIndex} setPageIndex={setPageIndex} />
+      <ProgressBar length={pageIndex} />
     </div>
   );
 };
