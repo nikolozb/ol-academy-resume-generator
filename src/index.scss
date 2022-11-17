@@ -3,3 +3,69 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.ct {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__colors {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 12px;
+    max-width: 310px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+  &__color {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.resume-template {
+  max-width: 800px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.angora {
+  h1 {
+    transition: 0.2s all;
+  }
+}
+
+.bp {
+  &__body {
+    display: flex;
+    column-gap: 12px;
+  }
+}
+
+.template-box {
+  position: relative;
+  &__btn {
+    padding: 8px 9px;
+    font-size: 16px;
+    border: none;
+    background-color: grey;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    cursor: pointer;
+  }
+  &__left {
+    left: -15px;
+    top: 40%;
+  }
+  &__right {
+    right: -15px;
+    top: 40%;
+  }
+}
