@@ -1,6 +1,6 @@
 import React from "react";
 
-const Skills = ({ handleOnInputChange, value }) => {
+const Skills = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
       {" "}
@@ -11,6 +11,7 @@ const Skills = ({ handleOnInputChange, value }) => {
         rows="10"
         onChange={handleOnInputChange}
         value={value.skills}
+        placeholder={placeholder[6]}
       ></textarea>
     </>
   );

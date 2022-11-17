@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { sectionNames } from "../data";
+import useFetch from "../hooks/useFetch";
+import { ColorRing } from "react-loader-spinner";
 
 import Name from "../components/sections/Name";
 import Contacts from "../components/sections/Contacts";
@@ -20,6 +22,10 @@ const Create = () => {
     localStorage.setItem("data", JSON.stringify(inputValues));
   }, [inputValues]);
 
+  const { data, loading } = useFetch(
+    "https://my-json-server.typicode.com/nikolozb/resumes-db/placeholders"
+  );
+
   const handleOnInputChange = (e) => {
     console.log();
     const { name, value } = e.target;
@@ -29,12 +35,14 @@ const Create = () => {
     });
   };
 
-  console.log(inputValues);
-
   const switchSectionsHandler = () => {
     if (pageIndex === 0) {
       return (
-        <Name handleOnInputChange={handleOnInputChange} value={inputValues} />
+        <Name
+          handleOnInputChange={handleOnInputChange}
+          value={inputValues}
+          placeholder={data}
+        />
       );
     }
     if (pageIndex === 1) {
@@ -42,12 +50,17 @@ const Create = () => {
         <Contacts
           handleOnInputChange={handleOnInputChange}
           value={inputValues}
+          placeholder={data}
         />
       );
     }
     if (pageIndex === 2) {
       return (
-        <Skills handleOnInputChange={handleOnInputChange} value={inputValues} />
+        <Skills
+          handleOnInputChange={handleOnInputChange}
+          value={inputValues}
+          placeholder={data}
+        />
       );
     }
     if (pageIndex === 3) {
@@ -55,6 +68,7 @@ const Create = () => {
         <Experience
           handleOnInputChange={handleOnInputChange}
           value={inputValues}
+          placeholder={data}
         />
       );
     }
@@ -63,6 +77,7 @@ const Create = () => {
         <Education
           handleOnInputChange={handleOnInputChange}
           value={inputValues}
+          placeholder={data}
         />
       );
     }
@@ -71,6 +86,7 @@ const Create = () => {
         <ProSummary
           handleOnInputChange={handleOnInputChange}
           value={inputValues}
+          placeholder={data}
         />
       );
     }
@@ -78,7 +94,19 @@ const Create = () => {
 
   return (
     <div>
-      {switchSectionsHandler()}
+      {loading ? (
+        <ColorRing
+          visible={true}
+          height="40"
+          width="40"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+        />
+      ) : (
+        switchSectionsHandler()
+      )}
       <SectionControlls pageIndex={pageIndex} setPageIndex={setPageIndex} />
       <ProgressBar length={pageIndex} />
     </div>

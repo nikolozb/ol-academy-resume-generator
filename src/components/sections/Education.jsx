@@ -1,6 +1,6 @@
 import React from "react";
 
-const Education = ({ handleOnInputChange, value }) => {
+const Education = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
       {" "}
@@ -11,6 +11,7 @@ const Education = ({ handleOnInputChange, value }) => {
         rows="10"
         onChange={handleOnInputChange}
         value={value.education}
+        placeholder={placeholder[4]}
       ></textarea>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Experience = ({ handleOnInputChange, value }) => {
+const Experience = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
       <textarea
@@ -10,6 +10,7 @@ const Experience = ({ handleOnInputChange, value }) => {
         rows="10"
         onChange={handleOnInputChange}
         value={value.experience}
+        placeholder={placeholder[5]}
       ></textarea>
     </>
   );

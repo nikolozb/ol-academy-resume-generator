@@ -1,6 +1,6 @@
 import React from "react";
 
-const Name = ({ handleOnInputChange, value }) => {
+const Name = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
       {" "}
@@ -9,6 +9,7 @@ const Name = ({ handleOnInputChange, value }) => {
         name="name"
         value={value.name}
         onChange={handleOnInputChange}
+        placeholder={placeholder[0]}
       />
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProSummary = ({ handleOnInputChange, value }) => {
+const ProSummary = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
       {" "}
@@ -11,6 +11,7 @@ const ProSummary = ({ handleOnInputChange, value }) => {
         rows="10"
         onChange={handleOnInputChange}
         value={value.prosummary}
+        placeholder={placeholder[7]}
       ></textarea>
     </>
   );
