@@ -1,22 +1,37 @@
 import { palette, dummy_data, themeDesc } from "../data";
-import { Link } from "react-router-dom";
+import { useNavigate, createSearchParams } from "react-router-dom";
 import { useState } from "react";
 
 import TemplateBox from "../components/TemplateBox";
 
+import { Button } from "reactstrap";
+
 const ChooseTemplate = () => {
   const [hex, setHex] = useState("");
-  const [name, setName] = useState("");
+  const [name, setName] = useState("ClassicBlack");
   const [theme, setTheme] = useState("Angora");
   const [themeText, setThemeText] = useState(themeDesc.angora);
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate({
+      pathname: "/create",
+      search: createSearchParams({
+        theme: theme,
+        color: name,
+      }).toString(),
+    });
+  };
 
   return (
     <div className="ct">
       <div className="ct__left">
-        <h2>Theme - {theme}</h2>
-        <p>{themeText}</p>
+        <h3>Theme - {theme}</h3>
+        <p className="ct__desc">{themeText}</p>
         <>
-          <h3>COLOR - {name}</h3>
+          <h3>
+            Color - <span style={{ color: `${hex}` }}>{name}</span>
+          </h3>
           <div className="ct__colors">
             {palette.map(({ id, name, hex }) => (
               <div
@@ -31,7 +46,9 @@ const ChooseTemplate = () => {
             ))}
           </div>
         </>
-        <Link to="/create">Select this theme</Link>
+        <Button onClick={handleNavigate} className="ct__button">
+          Select this theme
+        </Button>
       </div>
       <div className="ct__right">
         {" "}

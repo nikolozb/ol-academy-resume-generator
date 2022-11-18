@@ -31,23 +31,27 @@ const TemplateBox = ({
       </button>
       {theme === "Angora" && (
         <AngoraTemplate
-          name={data[0].name}
-          contacts={data[1]}
-          education={data[2]}
-          experience={data[3]}
-          skills={data[4].skills}
-          prosum={data[5].prosummary}
+          name={data.name}
+          email={data.email}
+          address={data.address}
+          number={data.number}
+          education={data.education}
+          experience={data.experience}
+          skills={data.skills}
+          prosummary={data.prosummary}
           color={color}
         />
       )}
       {theme === "Blueprint" && (
         <BlueprintTemplate
-          name={data[0].name}
-          contacts={data[1]}
-          education={data[2]}
-          experience={data[3]}
-          skills={data[4].skills}
-          prosum={data[5].prosummary}
+          name={data.name}
+          email={data.email}
+          address={data.address}
+          number={data.number}
+          education={data.education}
+          experience={data.experience}
+          skills={data.skills}
+          prosummary={data.prosummary}
           color={color}
         />
       )}

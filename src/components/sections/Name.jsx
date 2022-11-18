@@ -1,10 +1,10 @@
-import React from "react";
+import { Input } from "reactstrap";
 
 const Name = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
-      {" "}
-      <input
+      <Input
+        bsSize="lg"
         type="text"
         name="name"
         value={value.name}

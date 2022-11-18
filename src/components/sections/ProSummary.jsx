@@ -1,10 +1,12 @@
 import React from "react";
+import { Input } from "reactstrap";
 
 const ProSummary = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
-      {" "}
-      <textarea
+      <Input
+        bsSize="lg"
+        type="textarea"
         name="prosummary"
         id=""
         cols="30"
@@ -12,7 +14,7 @@ const ProSummary = ({ handleOnInputChange, value, placeholder }) => {
         onChange={handleOnInputChange}
         value={value.prosummary}
         placeholder={placeholder[7]}
-      ></textarea>
+      />
     </>
   );
 };

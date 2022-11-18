@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Button } from "reactstrap";
+
 const ExportJSON = () => {
   const [data] = useState(localStorage.getItem("data"));
 
@@ -9,15 +11,15 @@ const ExportJSON = () => {
     )}`;
     const link = document.createElement("a");
     link.href = jsonString;
-    link.download = "data.json";
+    link.download = "cv-data.json";
     link.click();
   };
 
   return (
     <>
-      <button type="button" onClick={exportJSONData}>
+      <Button size="lg" type="button" onClick={exportJSONData}>
         Export JSON
-      </button>
+      </Button>
     </>
   );
 };

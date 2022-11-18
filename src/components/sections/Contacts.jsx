@@ -1,23 +1,26 @@
-import React from "react";
+import { Input } from "reactstrap";
 
 const Contacts = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
-      <input
+      <Input
+        bsSize="lg"
         type="text"
         name="address"
         onChange={handleOnInputChange}
         value={value.address}
         placeholder={placeholder[1]}
       />
-      <input
+      <Input
+        bsSize="lg"
         type="email"
         name="email"
         onChange={handleOnInputChange}
         value={value.email}
         placeholder={placeholder[2]}
       />
-      <input
+      <Input
+        bsSize="lg"
         type="number"
         name="number"
         onChange={handleOnInputChange}

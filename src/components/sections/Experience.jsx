@@ -1,9 +1,12 @@
 import React from "react";
+import { Input } from "reactstrap";
 
 const Experience = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
-      <textarea
+      <Input
+        bsSize="lg"
+        type="textarea"
         name="experience"
         id=""
         cols="30"
@@ -11,7 +14,7 @@ const Experience = ({ handleOnInputChange, value, placeholder }) => {
         onChange={handleOnInputChange}
         value={value.experience}
         placeholder={placeholder[5]}
-      ></textarea>
+      />
     </>
   );
 };

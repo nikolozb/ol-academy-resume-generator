@@ -7,9 +7,14 @@ import ChooseTemplate from "./pages/ChooseTemplate";
 import Create from "./pages/Create";
 import Export from "./pages/Export";
 
+import { Navbar, NavbarBrand } from "reactstrap";
+
 function App() {
   return (
     <div>
+      <Navbar color="secondary" dark>
+        <NavbarBrand>Resume generator</NavbarBrand>
+      </Navbar>
       <Routes>
         <Route path="/*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
@@ -17,6 +22,7 @@ function App() {
         <Route path="/import-resume" element={<ImportResume />} />
         <Route path="/create" element={<Create />} />
         <Route path="/export" element={<Export />} />
+        <Route path="/create/" element={<Create />} />
       </Routes>
     </div>
   );

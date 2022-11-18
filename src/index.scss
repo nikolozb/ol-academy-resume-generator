@@ -5,8 +5,11 @@
 }
 
 .ct {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+
+  margin-top: 48px;
 
   &__colors {
     border: 1px solid black;
@@ -26,16 +29,33 @@
     border-radius: 50%;
     cursor: pointer;
   }
+
+  &__desc {
+    max-width: 400px;
+    margin-bottom: 28px;
+  }
+
+  &__left {
+    padding-left: 64px;
+    margin-top: 64px;
+  }
+  &__button {
+    margin-top: 12px;
+  }
 }
 
 .resume-template {
   max-width: 800px;
+  min-height: 800px;
   border: 1px solid black;
   border-radius: 4px;
-  padding: 20px;
+  padding: 32px 20px;
 }
 
 .angora {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   h1 {
     transition: 0.2s all;
   }
@@ -67,5 +87,59 @@
   &__right {
     right: -15px;
     top: 40%;
+  }
+}
+
+.create {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  column-gap: 18px;
+  margin-top: 48px;
+
+  &__left {
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+  &__right {
+  }
+}
+
+.progress-bar {
+  min-width: 300px;
+  &__block {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__item {
+    width: 32px;
+    height: 32px;
+    background-color: aqua;
+    border-radius: 50%;
+  }
+}
+
+.section-controlls {
+  display: flex;
+  justify-content: space-between;
+
+  &__next {
+    margin-left: 40px;
+  }
+}
+
+.export {
+  margin-top: 48px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 24px;
   }
 }

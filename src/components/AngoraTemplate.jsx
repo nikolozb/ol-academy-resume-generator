@@ -2,61 +2,60 @@ import React from "react";
 
 const AngoraTemplate = ({
   name,
-  contacts,
+  email,
+  address,
+  number,
   education,
   experience,
   skills,
-  prosum,
+  prosummary,
   color,
 }) => {
   return (
     <div className="resume-template angora">
-      <h1 className="angora__name" style={{ color: `${color}` }}>
-        {name}
-      </h1>
-      <hr />
       <div className="angora__contacts">
-        <h3 className="angora__contacts-item">{contacts.address}</h3>
-        <h3 className="angora__contacts-item">{contacts.email}</h3>
-        <h3 className="angora__contacts-item">{contacts.number}</h3>
+        <h1 className="angora__name" style={{ color: `${color}` }}>
+          {name}
+          <hr />
+        </h1>
+        <h6 className="angora__contacts-item">Address: {address}</h6>
+        <h6 className="angora__contacts-item">Email: {email}</h6>
+        <h6 className="angora__contacts-item">Number: {number}</h6>
       </div>
-      <h1 style={{ color: `${color}` }}>Education</h1>
-      <hr />
       <div className="angora__edu">
+        <h2 style={{ color: `${color}` }}>
+          Education
+          <hr />
+        </h2>
         <div className="angora__edu-content flex-between">
-          <span>{education.major}</span>
-          <span>{education.date}</span>
+          <span>{education}</span>
         </div>
       </div>
-      <h1 style={{ color: `${color}` }}>Experience</h1>
-      <hr />
       <div className="angora__exp">
+        <h2 style={{ color: `${color}` }}>
+          Experience
+          <hr />
+        </h2>
         <div className="angora__exp-content">
           <div className="flex-between">
-            <h3>{experience.pos}</h3>
-            <span>{experience.date}</span>
-          </div>
-          <div>
-            {experience.duties.map((duty, id) => (
-              <span key={id} style={{ display: "block" }}>
-                {duty}
-              </span>
-            ))}
+            <span>{experience}</span>
           </div>
         </div>
       </div>
-      <h1 style={{ color: `${color}` }}>Skills</h1>
-      <hr />
       <div className="angora__skills">
-        {skills.map((skill, id) => (
-          <span key={id} style={{ display: "block" }}>
-            {skill}
-          </span>
-        ))}
+        <h2 style={{ color: `${color}` }}>
+          Skills
+          <hr />
+        </h2>
+        {skills}
       </div>
-      <h1 style={{ color: `${color}` }}>Professional Summary</h1>
-      <hr />
-      <div className="angora__prosum">{prosum}</div>
+      <div className="angora__prosum">
+        <h2 style={{ color: `${color}` }}>
+          Professional Summary
+          <hr />
+        </h2>
+        {prosummary}
+      </div>
     </div>
   );
 };
