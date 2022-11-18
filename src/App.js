@@ -5,10 +5,14 @@ import Home from "./pages/Home";
 import ImportResume from "./pages/ImportResume";
 import ChooseTemplate from "./pages/ChooseTemplate";
 import Create from "./pages/Create";
+import { Navbar, NavbarBrand } from "reactstrap";
 
 function App() {
   return (
     <div>
+      <Navbar color="secondary" dark>
+        <NavbarBrand>Resume generator</NavbarBrand>
+      </Navbar>
       <Routes>
         <Route path="/*" element={<NotFound />} />
         <Route path="/" element={<Home />} />

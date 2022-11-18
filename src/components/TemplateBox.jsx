@@ -39,6 +39,7 @@ const TemplateBox = ({
           experience={data.experience}
           skills={data.skills}
           prosummary={data.prosummary}
+          color={color}
         />
       )}
       {theme === "Blueprint" && (
@@ -51,6 +52,7 @@ const TemplateBox = ({
           experience={data.experience}
           skills={data.skills}
           prosummary={data.prosummary}
+          color={color}
         />
       )}
     </div>

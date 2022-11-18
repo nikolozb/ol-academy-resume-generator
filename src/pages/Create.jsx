@@ -11,9 +11,10 @@ import Experience from "../components/sections/Experience";
 import Education from "../components/sections/Education";
 import ProSummary from "../components/sections/ProSummary";
 import SectionControlls from "../components/SectionControlls";
-import ProgressBar from "../components/ProgressBar";
 import AngoraTemplate from "../components/AngoraTemplate";
 import BlueprintTemplate from "../components/BlueprintTemplate";
+
+import { Progress } from "reactstrap";
 
 const Create = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -101,11 +102,20 @@ const Create = () => {
   return (
     <div className="create">
       <div className="create__left">
+        <div>
+          <Progress
+            value={pageIndex}
+            min="0"
+            max="5"
+            // barStyle={{ backgroundColor: "red" }}
+          />
+          <div className="text-center">{pageIndex + 1} of 6</div>
+        </div>
         {loading ? (
           <ColorRing
             visible={true}
-            height="40"
-            width="40"
+            height="80"
+            width="80"
             ariaLabel="blocks-loading"
             wrapperStyle={{}}
             wrapperClass="blocks-wrapper"
@@ -142,7 +152,6 @@ const Create = () => {
           />
         )}
       </div>
-      <ProgressBar length={pageIndex} />
     </div>
   );
 };
