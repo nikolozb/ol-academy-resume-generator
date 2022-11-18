@@ -5,8 +5,11 @@
 }
 
 .ct {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+
+  margin-top: 48px;
 
   &__colors {
     border: 1px solid black;
@@ -25,6 +28,19 @@
     height: 60px;
     border-radius: 50%;
     cursor: pointer;
+  }
+
+  &__desc {
+    max-width: 400px;
+    margin-bottom: 28px;
+  }
+
+  &__left {
+    padding-left: 64px;
+    margin-top: 64px;
+  }
+  &__button {
+    margin-top: 12px;
   }
 }
 
