@@ -2,11 +2,13 @@ import React from "react";
 
 const BlueprintTemplate = ({
   name,
-  contacts,
+  email,
+  address,
+  number,
   education,
   experience,
   skills,
-  prosum,
+  prosummary,
   color,
 }) => {
   return (
@@ -19,31 +21,24 @@ const BlueprintTemplate = ({
         <div className="bp__left">
           <h1 style={{ color: `${color}` }}>Contacts</h1>
           <div className="bp__contacts">
-            <h3 className="bp__contacts-item">{contacts.address}</h3>
-            <h3 className="bp__contacts-item">{contacts.email}</h3>
-            <h3 className="bp__contacts-item">{contacts.number}</h3>
+            <h3 className="bp__contacts-item">Address: {address}</h3>
+            <h3 className="bp__contacts-item">Email: {email}</h3>
+            <h3 className="bp__contacts-item">Number: {number}</h3>
           </div>
           <hr />
           <h1 style={{ color: `${color}` }}>Skills</h1>
-          <div className="bp__skills">
-            {skills.map((skill, id) => (
-              <span key={id} style={{ display: "block" }}>
-                {skill}
-              </span>
-            ))}
-          </div>
+          <div className="bp__skills">{skills}</div>
           <hr />
 
           <h1 style={{ color: `${color}` }}>Professional Summary</h1>
-          <div className="bp__prosum">{prosum}</div>
+          <div className="bp__prosum">{prosummary}</div>
         </div>
         <div className="bp__right">
           <h1 style={{ color: `${color}` }}>Education</h1>
           <hr />
           <div className="bp__edu">
             <div className="bp__edu-content flex-between">
-              <span>{education.major}</span>
-              <span>{education.date}</span>
+              <span>{education}</span>
             </div>
           </div>
           <h1 style={{ color: `${color}` }}>Experience</h1>
@@ -51,15 +46,7 @@ const BlueprintTemplate = ({
           <div className="bp__exp">
             <div className="bp__exp-content">
               <div className="flex-between">
-                <h3>{experience.pos}</h3>
-                <span>{experience.date}</span>
-              </div>
-              <div>
-                {experience.duties.map((duty, id) => (
-                  <span key={id} style={{ display: "block" }}>
-                    {duty}
-                  </span>
-                ))}
+                <h3>{experience}</h3>
               </div>
             </div>
           </div>

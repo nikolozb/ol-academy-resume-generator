@@ -13,6 +13,7 @@ import ProSummary from "../components/sections/ProSummary";
 import SectionControlls from "../components/SectionControlls";
 import ProgressBar from "../components/ProgressBar";
 import AngoraTemplate from "../components/AngoraTemplate";
+import BlueprintTemplate from "../components/BlueprintTemplate";
 
 const Create = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -116,16 +117,30 @@ const Create = () => {
         <SectionControlls pageIndex={pageIndex} setPageIndex={setPageIndex} />
       </div>
       <div className="create__right">
-        <AngoraTemplate
-          name={inputValues.name}
-          email={inputValues.email}
-          address={inputValues.address}
-          number={inputValues.number}
-          education={inputValues.education}
-          experience={inputValues.experience}
-          skills={inputValues.skills}
-          prosummary={inputValues.prosummary}
-        />
+        {theme === "Angora" && (
+          <AngoraTemplate
+            name={inputValues.name}
+            email={inputValues.email}
+            address={inputValues.address}
+            number={inputValues.number}
+            education={inputValues.education}
+            experience={inputValues.experience}
+            skills={inputValues.skills}
+            prosummary={inputValues.prosummary}
+          />
+        )}
+        {theme === "Blueprint" && (
+          <BlueprintTemplate
+            name={inputValues.name}
+            email={inputValues.email}
+            address={inputValues.address}
+            number={inputValues.number}
+            education={inputValues.education}
+            experience={inputValues.experience}
+            skills={inputValues.skills}
+            prosummary={inputValues.prosummary}
+          />
+        )}
       </div>
       <ProgressBar length={pageIndex} />
     </div>
