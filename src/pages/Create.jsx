@@ -3,6 +3,7 @@ import { sectionNames } from "../data";
 import useFetch from "../hooks/useFetch";
 import { ColorRing } from "react-loader-spinner";
 import { useSearchParams } from "react-router-dom";
+import { colorPicker } from "../helpers/colorPicker";
 
 import Name from "../components/sections/Name";
 import Contacts from "../components/sections/Contacts";
@@ -107,7 +108,7 @@ const Create = () => {
             value={pageIndex}
             min="0"
             max="5"
-            // barStyle={{ backgroundColor: "red" }}
+            barStyle={{ backgroundColor: `${colorPicker(color)}` }}
           />
           <div className="text-center">{pageIndex + 1} of 6</div>
         </div>
@@ -137,6 +138,7 @@ const Create = () => {
             experience={inputValues.experience}
             skills={inputValues.skills}
             prosummary={inputValues.prosummary}
+            color={colorPicker(color)}
           />
         )}
         {theme === "Blueprint" && (
@@ -149,6 +151,7 @@ const Create = () => {
             experience={inputValues.experience}
             skills={inputValues.skills}
             prosummary={inputValues.prosummary}
+            color={colorPicker(color)}
           />
         )}
       </div>
