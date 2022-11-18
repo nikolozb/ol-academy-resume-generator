@@ -30,12 +30,16 @@
 
 .resume-template {
   max-width: 800px;
+  min-height: 800px;
   border: 1px solid black;
   border-radius: 4px;
-  padding: 20px;
+  padding: 32px 20px;
 }
 
 .angora {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   h1 {
     transition: 0.2s all;
   }
@@ -67,5 +71,16 @@
   &__right {
     right: -15px;
     top: 40%;
+  }
+}
+
+.create {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+
+  &__left {
+  }
+  &__right {
   }
 }

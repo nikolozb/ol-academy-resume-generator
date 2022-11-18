@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/choose-template" element={<ChooseTemplate />} />
         <Route path="/import-resume" element={<ImportResume />} />
-        <Route path="/create" element={<Create />} />
+        <Route path="/create/" element={<Create />} />
       </Routes>
     </div>
   );
