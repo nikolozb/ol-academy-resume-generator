@@ -5,17 +5,21 @@ import StoredResume from "../components/StoredResume";
 import ContextMenu from "../components/ContextMenu";
 
 const StoredResumes = () => {
-  const [selectedResume, setSelectedResume] = useState(0);
+  const [selectedResume, setSelectedResume] = useState("");
   const allResumes = JSON.parse(localStorage.getItem("all_resumes"));
-
-  console.log(selectedResume);
 
   const listRef = useRef();
   const menuRef = useRef();
 
   const getExactResume = (id) => setSelectedResume(id);
 
-  const deleteResumeHandler = () => {};
+  const deleteResumeHandler = () => {
+    localStorage.removeItem("all_resumes");
+    localStorage.setItem(
+      "all_resumes",
+      JSON.stringify(allResumes.filter(({ id }) => id !== selectedResume))
+    );
+  };
 
   const { contextCords, contextText, showContextMenu, setShowContextMenu } =
     useContextMenu(listRef, menuRef);
@@ -23,12 +27,12 @@ const StoredResumes = () => {
   return (
     <div className="sr">
       <ul ref={listRef} className="sr__list">
-        {allResumes.map(({ name, date }, index) => (
+        {allResumes.map(({ name, date, id }) => (
           <StoredResume
-            key={index}
+            key={id}
+            id={id}
             name={name}
             date={date}
-            id={index}
             getExactResume={getExactResume}
           />
         ))}
