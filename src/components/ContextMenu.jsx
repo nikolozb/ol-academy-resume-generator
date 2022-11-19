@@ -1,6 +1,12 @@
-import React from "react";
+import { Button } from "reactstrap";
 
-const ContextMenu = ({ text, cords, setShowContextMenu, menuRef }) => {
+const ContextMenu = ({
+  text,
+  cords,
+  setShowContextMenu,
+  menuRef,
+  deleteResumeHandler,
+}) => {
   return (
     <div
       style={{ top: `${cords.y}px`, left: `${cords.x}px` }}
@@ -8,7 +14,14 @@ const ContextMenu = ({ text, cords, setShowContextMenu, menuRef }) => {
       ref={menuRef}
       onContextMenu={(e) => e.preventDefault()}
     >
-      <button onClick={() => setShowContextMenu(false)}>Delete</button>
+      <Button
+        onClick={() => {
+          deleteResumeHandler();
+          setShowContextMenu(false);
+        }}
+      >
+        Delete
+      </Button>
     </div>
   );
 };
