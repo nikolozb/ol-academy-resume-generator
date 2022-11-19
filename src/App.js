@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
@@ -8,13 +8,17 @@ import Create from "./pages/Create";
 import Export from "./pages/Export";
 import StoredResumes from "./pages/StoredResumes";
 
-import { Navbar, NavbarBrand } from "reactstrap";
+import { Navbar, NavbarBrand, Button } from "reactstrap";
 
 function App() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Navbar color="secondary" dark>
-        <NavbarBrand>Resume generator</NavbarBrand>
+        <NavbarBrand>
+          <Button onClick={() => navigate("/")}>Resume generator</Button>
+        </NavbarBrand>
       </Navbar>
       <Routes>
         <Route path="/*" element={<NotFound />} />
