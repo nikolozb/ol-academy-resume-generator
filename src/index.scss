@@ -133,18 +133,56 @@
 
 .export {
   margin-top: 48px;
+  position: relative;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
+  column-gap: 24px;
   &__buttons {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    row-gap: 12px;
     column-gap: 24px;
+    margin-left: 24px;
   }
   &__preview {
     max-width: 800px;
     min-height: 800px;
+  }
+  &__block1 {
+    display: flex;
+    column-gap: 12px;
+  }
+  &__block2 {
+    display: flex;
+    column-gap: 12px;
+  }
+}
+
+.popup {
+  position: absolute;
+  top: -110px;
+  left: 0;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.3);
+  &__container {
+    text-align: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 12px;
+  }
+  &__block {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-around;
   }
 }
