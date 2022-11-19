@@ -24,6 +24,7 @@ const Popup = ({ popupRef }) => {
 
   const noButtonHandler = () => {
     localStorage.removeItem("data");
+    localStorage.removeItem("template");
     navigate("/");
   };
 
