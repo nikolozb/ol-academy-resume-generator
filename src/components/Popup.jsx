@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +10,7 @@ const Popup = ({ popupRef }) => {
 
   const yesButtonHandler = () => {
     const receivedData = JSON.parse(localStorage.getItem("all_resumes"));
-    const newData = { ...userData, date: saveDate };
+    const newData = { ...userData, date: format(saveDate, "PPpp") };
     receivedData.push(newData);
     localStorage.setItem("all_resumes", JSON.stringify(receivedData));
     localStorage.removeItem("data");
