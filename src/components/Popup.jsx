@@ -1,3 +1,6 @@
+import { format } from "date-fns";
+import { v4 as uuidv4 } from "uuid";
+
 import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +11,11 @@ const Popup = ({ popupRef }) => {
 
   const yesButtonHandler = () => {
     const receivedData = JSON.parse(localStorage.getItem("all_resumes"));
-    const newData = { ...userData, date: saveDate };
+    const newData = {
+      ...userData,
+      date: format(saveDate, "PPpp"),
+      id: uuidv4(),
+    };
     receivedData.push(newData);
     localStorage.setItem("all_resumes", JSON.stringify(receivedData));
     localStorage.removeItem("data");
