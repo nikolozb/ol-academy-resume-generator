@@ -7,8 +7,9 @@ import usePopup from "../hooks/usePopup";
 import AngoraTemplate from "../components/AngoraTemplate";
 import BlueprintTemplate from "../components/BlueprintTemplate";
 import ExportJSON from "../components/ExportJSON";
-import { Button, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button } from "reactstrap";
 import Popup from "../components/Popup";
+import { useNavigate } from "react-router-dom";
 
 const Export = () => {
   const [{ theme, color }] = useState(
@@ -19,6 +20,8 @@ const Export = () => {
   ] = useState(JSON.parse(localStorage.getItem("data")));
   const popupRef = useRef();
   const resumeRef = useRef();
+
+  const navigate = useNavigate();
 
   const { togglePopup, showPopup } = usePopup(popupRef);
 
@@ -53,7 +56,9 @@ const Export = () => {
           <Button size="lg" onClick={togglePopup}>
             Build another resume
           </Button>
-          <Button size="lg">See stored resumes</Button>
+          <Button size="lg" onClick={() => navigate("/stored_resumes")}>
+            See stored resumes
+          </Button>
         </div>
       </div>
       <div className="export__preview" ref={resumeRef}>
