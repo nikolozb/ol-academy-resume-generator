@@ -189,10 +189,12 @@
 
 .sr {
   padding: 48px;
-  display: flex;
-  flex-direction: column;
-  // align-items: center;
-  row-gap: 32px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+  }
 
   &__item {
     padding: 16px;
@@ -201,8 +203,10 @@
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 6px;
+    width: auto;
     cursor: pointer;
-    max-width: 900px;
+
+    position: relative;
 
     h4 {
       margin: 0;
@@ -211,4 +215,16 @@
       margin: 0;
     }
   }
+}
+
+.context-menu {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 10px 15px;
+  background-color: cadetblue;
+  user-select: none;
 }
