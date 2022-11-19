@@ -206,6 +206,10 @@
     width: auto;
     cursor: pointer;
 
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
     position: relative;
 
     h4 {

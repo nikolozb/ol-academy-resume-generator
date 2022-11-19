@@ -26,17 +26,21 @@ const StoredResumes = () => {
 
   return (
     <div className="sr">
-      <ul ref={listRef} className="sr__list">
-        {allResumes.map(({ name, date, id }) => (
-          <StoredResume
-            key={id}
-            id={id}
-            name={name}
-            date={date}
-            getExactResume={getExactResume}
-          />
-        ))}
-      </ul>
+      {!!!allResumes?.length ? (
+        <h1>No resumes...</h1>
+      ) : (
+        <ul ref={listRef} className="sr__list">
+          {allResumes.map(({ name, date, id }) => (
+            <StoredResume
+              key={id}
+              id={id}
+              name={name}
+              date={date}
+              getExactResume={getExactResume}
+            />
+          ))}
+        </ul>
+      )}
       {showContextMenu && (
         <ContextMenu
           menuRef={menuRef}
