@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { createSearchParams, Link, useNavigate } from "react-router-dom";
 
 import { Button } from "reactstrap";
 
 const Home = () => {
   const [lastResume, setLastResume] = useState(null);
+  const [template, setTemplate] = useState(null);
 
   useEffect(() => {
     const AllResumes = JSON.parse(localStorage.getItem("all_resumes"));
@@ -13,10 +14,22 @@ const Home = () => {
     } else return;
   }, []);
 
+  useEffect(() => {
+    const template = JSON.parse(localStorage.getItem("template"));
+    if (template !== null) {
+      setTemplate(template);
+    } else return;
+  }, []);
+
   const navigate = useNavigate();
+
   const handleNavigate = () => {
     navigate({
       pathname: "/create",
+      search: createSearchParams({
+        theme: template.theme,
+        color: template.color,
+      }).toString(),
     });
   };
 
@@ -50,11 +63,11 @@ const Home = () => {
             Import resume
           </Button>
         </Link>
-        <Link to="/">
-          <Button color="secondary" size="lg">
+        {template === null ? null : (
+          <Button color="secondary" size="lg" onClick={handleNavigate}>
             Continue
           </Button>
-        </Link>
+        )}
       </div>
     </div>
   );
