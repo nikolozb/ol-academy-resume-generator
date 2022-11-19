@@ -25,7 +25,17 @@ const SectionControlls = ({ pageIndex, setPageIndex }) => {
         to="/export"
         style={{ pointerEvents: pageIndex === 5 ? "" : "none" }}
       >
-        <Button size="lg" outline>
+        <Button
+          size="lg"
+          outline
+          onClick={() => {
+            const existingArray = localStorage.getItem("all_resumes");
+            localStorage.setItem(
+              "all_resumes",
+              existingArray || JSON.stringify([])
+            );
+          }}
+        >
           Generate
         </Button>
       </Link>
