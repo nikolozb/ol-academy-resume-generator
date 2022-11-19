@@ -1,10 +1,12 @@
 import React from "react";
+import { Input } from "reactstrap";
 
 const Education = ({ handleOnInputChange, value, placeholder }) => {
   return (
     <>
-      {" "}
-      <textarea
+      <Input
+        bsSize="lg"
+        type="textarea"
         name="education"
         id=""
         cols="30"
@@ -12,7 +14,7 @@ const Education = ({ handleOnInputChange, value, placeholder }) => {
         onChange={handleOnInputChange}
         value={value.education}
         placeholder={placeholder[4]}
-      ></textarea>
+      />
     </>
   );
 };
