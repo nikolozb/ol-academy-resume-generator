@@ -3,11 +3,14 @@ import { useState } from "react";
 import { Button } from "reactstrap";
 
 const ExportJSON = () => {
-  const [data] = useState(localStorage.getItem("data"));
+  const [data] = useState({
+    ...JSON.parse(localStorage.getItem("data")),
+    ...JSON.parse(localStorage.getItem("template")),
+  });
 
   const exportJSONData = () => {
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-      data
+      JSON.stringify(data)
     )}`;
     const link = document.createElement("a");
     link.href = jsonString;
