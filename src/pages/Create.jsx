@@ -53,60 +53,69 @@ const Create = () => {
   };
 
   const switchSectionsHandler = () => {
-    if (pageIndex === 0) {
-      return (
-        <Name
-          handleOnInputChange={handleOnInputChange}
-          value={inputValues}
-          placeholder={data}
-        />
-      );
-    }
-    if (pageIndex === 1) {
-      return (
-        <Contacts
-          handleOnInputChange={handleOnInputChange}
-          value={inputValues}
-          placeholder={data}
-        />
-      );
-    }
-    if (pageIndex === 2) {
-      return (
-        <Skills
-          handleOnInputChange={handleOnInputChange}
-          value={inputValues}
-          placeholder={data}
-        />
-      );
-    }
-    if (pageIndex === 3) {
-      return (
-        <Experience
-          handleOnInputChange={handleOnInputChange}
-          value={inputValues}
-          placeholder={data}
-        />
-      );
-    }
-    if (pageIndex === 4) {
-      return (
-        <Education
-          handleOnInputChange={handleOnInputChange}
-          value={inputValues}
-          placeholder={data}
-        />
-      );
-    }
-    if (pageIndex === 5) {
-      return (
-        <ProSummary
-          handleOnInputChange={handleOnInputChange}
-          value={inputValues}
-          placeholder={data}
-        />
-      );
-    }
+    const pagesByIndex = [
+      {
+        pageIndex: 0,
+        component: (
+          <Name
+            handleOnInputChange={handleOnInputChange}
+            value={inputValues}
+            placeholder={data}
+          />
+        ),
+      },
+      {
+        pageIndex: 1,
+        component: (
+          <Contacts
+            handleOnInputChange={handleOnInputChange}
+            value={inputValues}
+            placeholder={data}
+          />
+        ),
+      },
+      {
+        pageIndex: 2,
+        component: (
+          <Skills
+            handleOnInputChange={handleOnInputChange}
+            value={inputValues}
+            placeholder={data}
+          />
+        ),
+      },
+      {
+        pageIndex: 3,
+        component: (
+          <Experience
+            handleOnInputChange={handleOnInputChange}
+            value={inputValues}
+            placeholder={data}
+          />
+        ),
+      },
+      {
+        pageIndex: 4,
+        component: (
+          <Education
+            handleOnInputChange={handleOnInputChange}
+            value={inputValues}
+            placeholder={data}
+          />
+        ),
+      },
+      {
+        pageIndex: 5,
+        component: (
+          <ProSummary
+            handleOnInputChange={handleOnInputChange}
+            value={inputValues}
+            placeholder={data}
+          />
+        ),
+      },
+    ];
+    return pagesByIndex.find((item) => item.pageIndex === pageIndex).component;
   };
 
   return (
