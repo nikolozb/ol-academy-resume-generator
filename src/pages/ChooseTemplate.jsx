@@ -1,4 +1,4 @@
-import { palette, dummy_data, themeDesc } from "../data";
+import { palette, dummy_data, themeDesc, sectionNames } from "../data";
 import { useNavigate, createSearchParams } from "react-router-dom";
 import { useState } from "react";
 
@@ -21,6 +21,7 @@ const ChooseTemplate = () => {
         color: name,
       }).toString(),
     });
+    localStorage.setItem("data", JSON.stringify(sectionNames));
   };
 
   return (

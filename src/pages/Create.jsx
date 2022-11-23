@@ -30,6 +30,15 @@ const Create = () => {
     localStorage.setItem("data", JSON.stringify(inputValues));
   }, [inputValues]);
 
+  useEffect(
+    () =>
+      localStorage.setItem(
+        "template",
+        JSON.stringify({ theme: theme, color: color })
+      ),
+    [theme, color]
+  );
+
   const { data, loading } = useFetch(
     "https://my-json-server.typicode.com/nikolozb/resumes-db/placeholders"
   );
