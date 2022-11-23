@@ -7,7 +7,7 @@ const useContextMenu = (ref1, ref2) => {
 
   useEffect(() => {
     const showContext = (e) => {
-      if (ref1.current.contains(e.target)) {
+      if (ref1?.current?.contains(e.target)) {
         e.preventDefault();
         setContextCords({ x: e.pageX, y: e.pageY });
         setContextText(e.target.innerText);
@@ -22,7 +22,7 @@ const useContextMenu = (ref1, ref2) => {
   useEffect(() => {
     const hideContext = (e) => {
       if (ref2.current && ref2.current.contains(e.target)) return;
-      if (!ref1.current.contains(e.target)) {
+      if (!ref1?.current?.contains(e.target)) {
         setShowContextMenu(false);
       }
     };
