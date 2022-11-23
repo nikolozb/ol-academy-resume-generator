@@ -44,19 +44,27 @@ const Export = () => {
       {showPopup && <Popup popupRef={popupRef} />}
       <div className="export__buttons">
         <div className="export__block1">
-          <Button size="lg" onClick={exportImageHandler}>
+          <Button
+            size="lg"
+            className="export__btn"
+            onClick={exportImageHandler}
+          >
             Export Image
           </Button>
-          <Button size="lg" onClick={exportPdfHandler}>
+          <Button size="lg" className="export__btn" onClick={exportPdfHandler}>
             Export PDF
           </Button>
           <ExportJSON />
         </div>
         <div className="export__block2">
-          <Button size="lg" onClick={togglePopup}>
+          <Button size="lg" className="export__btn" onClick={togglePopup}>
             Build another resume
           </Button>
-          <Button size="lg" onClick={() => navigate("/stored_resumes")}>
+          <Button
+            size="lg"
+            className="export__btn"
+            onClick={() => navigate("/stored_resumes")}
+          >
             See stored resumes
           </Button>
         </div>

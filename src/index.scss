@@ -139,6 +139,33 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   column-gap: 24px;
+  padding-right: 24px;
+
+  @media (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 24px;
+
+    .export {
+      &__buttons {
+        margin: auto;
+      }
+      &__preview {
+        margin: auto;
+        padding-bottom: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .export {
+      &__btn {
+        font-size: 12px;
+        min-width: 60px;
+      }
+    }
+  }
   &__buttons {
     display: flex;
     flex-direction: column;
