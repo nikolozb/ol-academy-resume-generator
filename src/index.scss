@@ -45,7 +45,23 @@ a {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
 
-  margin-top: 48px;
+  padding-top: 48px;
+
+  @media (max-width: 1400px) {
+    padding: 0 0 48px 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    &__left {
+      margin: auto;
+      padding-top: 100px;
+    }
+
+    &__right {
+      margin: auto;
+    }
+  }
 
   &__colors {
     border: 1px solid black;
@@ -93,20 +109,122 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: auto;
+
+  @media (max-width: 1400px) {
+    h1 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 900px) {
+    width: 700px;
+  }
+
+  @media (max-width: 750px) {
+    width: 600px;
+  }
+
+  @media (max-width: 630px) {
+    width: 500px;
+  }
+
   h1 {
     transition: 0.2s all;
+  }
+
+  p {
+    word-wrap: break-word;
   }
 }
 
 .bp {
+  height: auto;
+  @media (max-width: 1400px) {
+    h1 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    width: 700px;
+
+    .bp {
+      &__skills,
+      &__prosum {
+        width: 160px;
+      }
+      &__edu,
+      &__exp {
+        width: 400px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    width: 600px;
+  }
+
+  @media (max-width: 630px) {
+    width: 500px;
+    .bp {
+      &__skills,
+      &__prosum {
+        width: 140px;
+      }
+      &__edu,
+      &__exp {
+        width: 300px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
   &__body {
     display: flex;
     column-gap: 12px;
+  }
+
+  &__skills,
+  &__prosum {
+    width: 200px;
+  }
+
+  &__edu,
+  &__exp {
+    width: 500px;
+  }
+
+  p {
+    word-wrap: break-word;
   }
 }
 
 .template-box {
   position: relative;
+  width: 800px;
+
+  @media (max-width: 900px) {
+    width: 700px;
+  }
+
+  @media (max-width: 750px) {
+    width: 600px;
+  }
+
+  @media (max-width: 630px) {
+    width: 500px;
+  }
+
   &__btn {
     padding: 8px 9px;
     font-size: 16px;
@@ -133,6 +251,28 @@ a {
   grid-template-rows: repeat(1, 1fr);
   column-gap: 18px;
   margin-top: 48px;
+  padding: 0 24px;
+
+  @media (max-width: 1400px) {
+    padding: 0 0 48px 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    .create {
+      padding: 0 12px;
+      &__left {
+        margin: auto;
+        padding-left: 0;
+        margin-top: 0;
+      }
+
+      &__right {
+        margin: auto;
+        margin-top: -100px;
+      }
+    }
+  }
 
   &__left {
     padding-left: 100px;

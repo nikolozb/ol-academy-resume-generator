@@ -14,13 +14,9 @@ const AngoraTemplate = ({
   return (
     <div className="resume-template angora">
       <div className="angora__contacts">
-        <h1 className="angora__name" style={{ color: `${color}` }}>
-          {name}
-          <hr />
-        </h1>
-        <h6 className="angora__contacts-item">Address: {address}</h6>
-        <h6 className="angora__contacts-item">Email: {email}</h6>
-        <h6 className="angora__contacts-item">Number: {number}</h6>
+        <h5 className="angora__contacts-item">Address: {address}</h5>
+        <h5 className="angora__contacts-item">Email: {email}</h5>
+        <h5 className="angora__contacts-item">Number: {number}</h5>
       </div>
       <div className="angora__edu">
         <h2 style={{ color: `${color}` }}>
@@ -28,7 +24,7 @@ const AngoraTemplate = ({
           <hr />
         </h2>
         <div className="angora__edu-content flex-between">
-          <span>{education}</span>
+          <p>{education}</p>
         </div>
       </div>
       <div className="angora__exp">
@@ -38,6 +34,7 @@ const AngoraTemplate = ({
         </h2>
         <div className="angora__exp-content">
           <div className="flex-between">
+
             <span>{experience}</span>
           </div>
         </div>
@@ -55,6 +52,24 @@ const AngoraTemplate = ({
           <hr />
         </h2>
         {prosummary}
+            <p>{experience}</p>
+          </div>
+        </div>
+      </div>
+  
+      <h1 style={{ color: `${color}` }}>
+        Skills
+        <hr />
+      </h1>
+      <div className="angora__skills">
+        <p>{skills}</p>
+      </div>
+      <h1 style={{ color: `${color}` }}>
+        Professional Summary
+        <hr />
+      </h1>
+      <div className="angora__prosum">
+        <p>{prosummary}</p>
       </div>
     </div>
   );

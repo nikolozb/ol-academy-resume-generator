@@ -21,24 +21,27 @@ const BlueprintTemplate = ({
         <div className="bp__left">
           <h1 style={{ color: `${color}` }}>Contacts</h1>
           <div className="bp__contacts">
-            <h3 className="bp__contacts-item">Address: {address}</h3>
-            <h3 className="bp__contacts-item">Email: {email}</h3>
-            <h3 className="bp__contacts-item">Number: {number}</h3>
+            <p className="bp__contacts-item">Address: {address}</p>
+            <p className="bp__contacts-item">Email: {email}</p>
+            <p className="bp__contacts-item">Number: {number}</p>
           </div>
           <hr />
           <h1 style={{ color: `${color}` }}>Skills</h1>
-          <div className="bp__skills">{skills}</div>
+          <div className="bp__skills">
+            <p>{skills}</p>
+          </div>
           <hr />
-
           <h1 style={{ color: `${color}` }}>Professional Summary</h1>
-          <div className="bp__prosum">{prosummary}</div>
+          <div className="bp__prosum">
+            <p>{prosummary}</p>
+          </div>
         </div>
         <div className="bp__right">
           <h1 style={{ color: `${color}` }}>Education</h1>
           <hr />
           <div className="bp__edu">
             <div className="bp__edu-content flex-between">
-              <span>{education}</span>
+              <p>{education}</p>
             </div>
           </div>
           <h1 style={{ color: `${color}` }}>Experience</h1>
@@ -46,7 +49,7 @@ const BlueprintTemplate = ({
           <div className="bp__exp">
             <div className="bp__exp-content">
               <div className="flex-between">
-                <h3>{experience}</h3>
+                <p>{experience}</p>
               </div>
             </div>
           </div>
