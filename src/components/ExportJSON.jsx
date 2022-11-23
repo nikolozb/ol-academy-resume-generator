@@ -17,7 +17,12 @@ const ExportJSON = () => {
 
   return (
     <>
-      <Button size="lg" type="button" onClick={exportJSONData}>
+      <Button
+        size="lg"
+        className="export__btn"
+        type="button"
+        onClick={exportJSONData}
+      >
         Export JSON
       </Button>
     </>
