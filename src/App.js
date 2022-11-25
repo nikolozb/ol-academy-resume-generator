@@ -25,7 +25,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/choose-template" element={<ChooseTemplate />} />
         <Route path="/import-resume" element={<ImportResume />} />
-        <Route path="/create" element={<Create />} />
         <Route path="/export" element={<Export />} />
         <Route path="/create/" element={<Create />} />
         <Route path="/stored_resumes" element={<StoredResumes />} />

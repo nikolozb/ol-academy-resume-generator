@@ -1,27 +1,24 @@
 import { useState, useEffect } from "react";
 import { createSearchParams, Link, useNavigate } from "react-router-dom";
-
 import { Button } from "reactstrap";
 
 const Home = () => {
   const [lastResume, setLastResume] = useState(null);
   const [template, setTemplate] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const AllResumes = JSON.parse(localStorage.getItem("all_resumes"));
+    const template = JSON.parse(localStorage.getItem("template"));
+
     if (AllResumes?.length !== 0 && AllResumes !== null) {
       setLastResume(AllResumes[AllResumes.length - 1]);
-    } else return;
-  }, []);
+    }
 
-  useEffect(() => {
-    const template = JSON.parse(localStorage.getItem("template"));
     if (template !== null) {
       setTemplate(template);
-    } else return;
+    }
   }, []);
-
-  const navigate = useNavigate();
 
   const handleNavigate = () => {
     navigate({
@@ -38,7 +35,7 @@ const Home = () => {
       <div className="home__last">
         <h4 className="home__title">Latest resume:</h4>
         <span className="home__info">
-          {lastResume === null ? (
+          {!lastResume ? (
             <h3>No resumes</h3>
           ) : (
             <span>

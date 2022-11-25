@@ -1,7 +1,6 @@
 import { Button } from "reactstrap";
 
 const ContextMenu = ({
-  text,
   cords,
   setShowContextMenu,
   menuRef,

@@ -11,6 +11,15 @@ import { Button } from "reactstrap";
 import Popup from "../components/Popup";
 import { useNavigate } from "react-router-dom";
 
+const exportImageHandler = async (ref) => {
+  const dataUrl = await toPng(ref);
+
+  const link = document.createElement("a");
+  link.download = "cv-image.png";
+  link.href = dataUrl;
+  link.click();
+};
+
 const Export = () => {
   const [{ theme, color }] = useState(
     JSON.parse(localStorage.getItem("template"))
@@ -30,15 +39,6 @@ const Export = () => {
     content: () => resumeRef.current,
   });
 
-  const exportImageHandler = async () => {
-    const dataUrl = await toPng(resumeRef.current);
-
-    const link = document.createElement("a");
-    link.download = "cv-image.png";
-    link.href = dataUrl;
-    link.click();
-  };
-
   return (
     <div className="export">
       {showPopup && <Popup popupRef={popupRef} />}
@@ -47,7 +47,7 @@ const Export = () => {
           <Button
             size="lg"
             className="export__btn"
-            onClick={exportImageHandler}
+            onClick={() => exportImageHandler(resumeRef.current)}
           >
             Export Image
           </Button>

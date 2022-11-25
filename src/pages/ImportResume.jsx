@@ -6,15 +6,14 @@ import { Button } from "reactstrap";
 const ImportResume = () => {
   const [data, setData] = useState(null);
 
-  const handleUpload = async (e) => {
+  const handleUpload = async ({ target: { files } }) => {
     const reader = new FileReader();
 
-    reader.onload = async (e) => {
-      const text = e.target.result;
-      setData(JSON.parse(text));
+    reader.onload = async ({ target: { result } }) => {
+      setData(JSON.parse(result));
     };
 
-    reader.readAsText(e.target.files[0]);
+    reader.readAsText(files[0]);
   };
 
   const navigate = useNavigate();

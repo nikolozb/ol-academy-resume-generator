@@ -6,7 +6,7 @@ import ContextMenu from "../components/ContextMenu";
 
 const StoredResumes = () => {
   const [selectedResume, setSelectedResume] = useState("");
-  const allResumes = JSON.parse(localStorage.getItem("all_resumes"));
+  const allResumes = JSON.parse(localStorage.getItem("all_resumes")).reverse();
 
   const listRef = useRef();
   const menuRef = useRef();
@@ -17,7 +17,9 @@ const StoredResumes = () => {
     localStorage.removeItem("all_resumes");
     localStorage.setItem(
       "all_resumes",
-      JSON.stringify(allResumes.filter(({ id }) => id !== selectedResume))
+      JSON.stringify(
+        allResumes.filter(({ id }) => id !== selectedResume).reverse()
+      )
     );
   };
 
@@ -26,7 +28,7 @@ const StoredResumes = () => {
 
   return (
     <div className="sr">
-      {!!!allResumes?.length ? (
+      {!allResumes?.length ? (
         <h1>No resumes...</h1>
       ) : (
         <ul ref={listRef} className="sr__list">

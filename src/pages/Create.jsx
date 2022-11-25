@@ -1,21 +1,24 @@
+import { Progress } from "reactstrap";
 import { useState, useEffect } from "react";
-import { sectionNames } from "../data";
-import useFetch from "../hooks/useFetch";
 import { ColorRing } from "react-loader-spinner";
 import { useSearchParams } from "react-router-dom";
-import { colorPicker } from "../helpers/colorPicker";
 
 import Name from "../components/sections/Name";
-import Contacts from "../components/sections/Contacts";
 import Skills from "../components/sections/Skills";
-import Experience from "../components/sections/Experience";
+import Contacts from "../components/sections/Contacts";
 import Education from "../components/sections/Education";
+import Experience from "../components/sections/Experience";
 import ProSummary from "../components/sections/ProSummary";
 import SectionControlls from "../components/SectionControlls";
 import AngoraTemplate from "../components/AngoraTemplate";
 import BlueprintTemplate from "../components/BlueprintTemplate";
 
-import { Progress } from "reactstrap";
+import { sectionNames, spinnerColors } from "../data";
+import useFetch from "../hooks/useFetch";
+import { colorPicker } from "../helpers/colorPicker";
+
+const PLACEHOLDER_URL =
+  "https://my-json-server.typicode.com/nikolozb/resumes-db/placeholders";
 
 const Create = () => {
   const [pageIndex, setPageIndex] = useState(0);
@@ -25,6 +28,17 @@ const Create = () => {
   const [params] = useSearchParams();
   const theme = params.get("theme");
   const color = params.get("color");
+
+  const {
+    name,
+    email,
+    address,
+    number,
+    education,
+    experience,
+    skills,
+    prosummary,
+  } = inputValues;
 
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(inputValues));
@@ -39,18 +53,13 @@ const Create = () => {
     [theme, color]
   );
 
-  const { data, loading } = useFetch(
-    "https://my-json-server.typicode.com/nikolozb/resumes-db/placeholders"
-  );
+  const { data, loading } = useFetch(PLACEHOLDER_URL);
 
-  const handleOnInputChange = (e) => {
-    console.log();
-    const { name, value } = e.target;
+  const handleOnInputChange = ({ target: { name, value } }) =>
     setInputValues({
       ...inputValues,
       [name]: value,
     });
-  };
 
   const switchSectionsHandler = () => {
     const pagesByIndex = [
@@ -138,7 +147,7 @@ const Create = () => {
             ariaLabel="blocks-loading"
             wrapperStyle={{}}
             wrapperClass="blocks-wrapper"
-            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+            colors={spinnerColors}
           />
         ) : (
           switchSectionsHandler()
@@ -148,27 +157,27 @@ const Create = () => {
       <div className="create__right">
         {theme === "Angora" && (
           <AngoraTemplate
-            name={inputValues.name}
-            email={inputValues.email}
-            address={inputValues.address}
-            number={inputValues.number}
-            education={inputValues.education}
-            experience={inputValues.experience}
-            skills={inputValues.skills}
-            prosummary={inputValues.prosummary}
+            name={name}
+            email={email}
+            address={address}
+            number={number}
+            education={education}
+            experience={experience}
+            skills={skills}
+            prosummary={prosummary}
             color={colorPicker(color)}
           />
         )}
         {theme === "Blueprint" && (
           <BlueprintTemplate
-            name={inputValues.name}
-            email={inputValues.email}
-            address={inputValues.address}
-            number={inputValues.number}
-            education={inputValues.education}
-            experience={inputValues.experience}
-            skills={inputValues.skills}
-            prosummary={inputValues.prosummary}
+            name={name}
+            email={email}
+            address={address}
+            number={number}
+            education={education}
+            experience={experience}
+            skills={skills}
+            prosummary={prosummary}
             color={colorPicker(color)}
           />
         )}

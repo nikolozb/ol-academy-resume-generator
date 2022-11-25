@@ -47,36 +47,6 @@ export const themeDesc = {
   bp: "A place for everything and everything in it's place. Build your career on a solid foundation with the measured design elements in Blueprint. You're a total stud and you're sure to nail the interview.",
 };
 
-// export const dummy_data = [
-//   { name: "Michael Williams" },
-//   {
-//     address: "123 Main Street, San Francisco, CA 94122",
-//     email: "mwilliams@address.com",
-//     number: "415-123-0012",
-//   },
-//   { major: "Master Of Arts: Operations Management", date: "Mar 2009" },
-//   {
-//     pos: "General Manager",
-//     date: "Jan 1994 - Aug 1997",
-//     duties: [
-//       "Successfully managed a team of 18 direct reports.",
-//       "Developed renovation strategy and oversaw the $110.000 store model.",
-//     ],
-//   },
-//   {
-//     skills: [
-//       "Executive Team leaderShip",
-//       "Sales management",
-//       "staff training",
-//       "client/vendor relations",
-//     ],
-//   },
-//   {
-//     prosummary:
-//       "Successful sales professional with 10+ years of experience in large-scale food and retail environments",
-//   },
-// ];
-
 export const dummy_data = {
   name: "Michael Williams",
   email: "Personal email",
@@ -98,3 +68,11 @@ export const sectionNames = {
   skills: "",
   prosummary: "",
 };
+
+export const spinnerColors = [
+  "#e15b64",
+  "#f47e60",
+  "#f8b26a",
+  "#abbd81",
+  "#849b87",
+];

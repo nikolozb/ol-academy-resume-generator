@@ -29,24 +29,22 @@ const ChooseTemplate = () => {
       <div className="ct__left">
         <h3>Theme - {theme}</h3>
         <p className="ct__desc">{themeText}</p>
-        <>
-          <h3>
-            Color - <span style={{ color: `${hex}` }}>{name}</span>
-          </h3>
-          <div className="ct__colors">
-            {palette.map(({ id, name, hex }) => (
-              <div
-                key={id}
-                style={{ backgroundColor: `${hex}` }}
-                className="ct__color"
-                onClick={() => {
-                  setHex(hex);
-                  setName(name);
-                }}
-              ></div>
-            ))}
-          </div>
-        </>
+        <h3>
+          Color - <span style={{ color: `${hex}` }}>{name}</span>
+        </h3>
+        <div className="ct__colors">
+          {palette.map(({ id, name, hex }) => (
+            <div
+              key={id}
+              style={{ backgroundColor: `${hex}` }}
+              className="ct__color"
+              onClick={() => {
+                setHex(hex);
+                setName(name);
+              }}
+            ></div>
+          ))}
+        </div>
         <Button onClick={handleNavigate} className="ct__button">
           Select this theme
         </Button>

@@ -9,6 +9,17 @@ const TemplateBox = ({
   setThemeText,
   themeDesc,
 }) => {
+  const {
+    name,
+    email,
+    address,
+    number,
+    education,
+    experience,
+    skills,
+    prosummary,
+  } = data;
+
   return (
     <div className="template-box">
       <button
@@ -31,27 +42,27 @@ const TemplateBox = ({
       </button>
       {theme === "Angora" && (
         <AngoraTemplate
-          name={data.name}
-          email={data.email}
-          address={data.address}
-          number={data.number}
-          education={data.education}
-          experience={data.experience}
-          skills={data.skills}
-          prosummary={data.prosummary}
+          name={name}
+          email={email}
+          address={address}
+          number={number}
+          education={education}
+          experience={experience}
+          skills={skills}
+          prosummary={prosummary}
           color={color}
         />
       )}
       {theme === "Blueprint" && (
         <BlueprintTemplate
-          name={data.name}
-          email={data.email}
-          address={data.address}
-          number={data.number}
-          education={data.education}
-          experience={data.experience}
-          skills={data.skills}
-          prosummary={data.prosummary}
+          name={name}
+          email={email}
+          address={address}
+          number={number}
+          education={education}
+          experience={experience}
+          skills={skills}
+          prosummary={prosummary}
           color={color}
         />
       )}
